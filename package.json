@@ -1,0 +1,29 @@
+{
+  "name": "path-replace-loader",
+  "version": "0.1.0",
+  "description": "Path replace loader for webpack",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cvgellhorn/path-replace-loader.git"
+  },
+  "keywords": [
+    "webpack",
+    "loader",
+    "path",
+    "replace"
+  ],
+  "author": "Christoph von Gellhorn",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/cvgellhorn/path-replace-loader/issues"
+  },
+  "homepage": "https://github.com/cvgellhorn/path-replace-loader#readme",
+  "dependencies": {
+    "file-exists": "^1.0.0",
+    "loader-utils": "^0.2.14"
+  }
+}
