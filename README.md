@@ -1,6 +1,6 @@
 # path-replace-loader for webpack
 
-Path replace loader for [webpack](http://webpack.github.io/). Replace a specific base path with another for dynamic module loading. Great for large applications with locally overridable modules.
+Path replace loader for [webpack](http://webpack.github.io/). Replace a given base path with another path for dynamic module loading. Great for large applications with locally overridable modules.
 
 ## Installation
 
@@ -36,6 +36,7 @@ var authModule = require('app/core/modules/auth');
 
 ## Release History
 
+- 0.2.0 - Use dependency to introduce file to webpack in order to make them watchable
 - 0.1.0 - Initial release
 
 ## [MIT License](http://www.opensource.org/licenses/mit-license.php)
