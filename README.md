@@ -12,8 +12,8 @@ Path replace loader for [webpack](http://webpack.github.io/). Replace a given ba
 
 #### Configuration
 
-- <b>path:</b> Absolute original path to replace, e.g __dirname/app/core
-- <b>replacePath:</b> Absolute replacement path, e.g __dirname/app/local
+- <b>path:</b> Absolute original path to replace, e.g. __dirname/app/core
+- <b>replacePath:</b> Absolute replacement path, e.g. __dirname/app/local
 
 #### webpack config example
 
@@ -30,12 +30,13 @@ module.exports = {
 #### Example
 
 ``` js
+// Loader tries to load from local directory if file exists app/local/modules/auth
 var authModule = require('app/core/modules/auth');
-// Loader tries to load from local directory instead app/local/modules/auth
 ```
 
 ## Release History
 
+- 0.2.1 - Update README
 - 0.2.0 - Use dependency to introduce file to webpack in order to make them watchable
 - 0.1.0 - Initial release
 
