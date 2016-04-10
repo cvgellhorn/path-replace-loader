@@ -9,6 +9,8 @@ module.exports = function(source) {
     if (this.resourcePath.indexOf(options.path) > -1) {
         var newPath = this.resourcePath.replace(options.path, options.replacePath);
         if (fileExists(newPath)) {
+            // Introduce file to webpack in order to make them watchable
+            this.dependency(newPath);
             return fs.readFileSync(newPath);
         }
     }
