@@ -4,7 +4,7 @@ Path replace loader for [webpack](http://webpack.github.io/). Replace a given ba
 
 ## Installation
 
-`npm install path-replace-loader`
+`$ npm install path-replace-loader`
 
 ## Usage
 
@@ -21,7 +21,15 @@ Path replace loader for [webpack](http://webpack.github.io/). Replace a given ba
 module.exports = {
   module: {
     loaders: [
-      { test: /\.js$/, loader: 'path-replace?path=ORIGINAL_PATH&replacePath=REPLACE_PATH' },
+      {
+          test: /\.js$/,
+          loader: 'path-replace',
+          exclude: /(node_modules)/,
+          query: {
+              path: 'ORIGINAL_PATH',
+              replacePath: 'REPLACE_PATH'
+          }
+      }
     ]
   }
 };
@@ -36,6 +44,7 @@ var authModule = require('app/core/modules/auth');
 
 ## Release History
 
+- 0.2.2 - Improve example
 - 0.2.1 - Update README
 - 0.2.0 - Use dependency to introduce file to webpack in order to make them watchable
 - 0.1.0 - Initial release
