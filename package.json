@@ -1,6 +1,6 @@
 {
   "name": "path-replace-loader",
-  "version": "0.2.2",
+  "version": "1.0.0",
   "description": "Path replace loader for webpack",
   "main": "index.js",
   "scripts": {
