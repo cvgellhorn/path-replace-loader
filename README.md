@@ -15,7 +15,7 @@ Path replace loader for [webpack](https://webpack.js.org/). Replace a given base
 - <b>path:</b> Absolute original path to replace, e.g. __dirname/app/core
 - <b>replacePath:</b> Absolute replacement path, e.g. __dirname/app/local
 
-#### webpack 2
+#### webpack config
 
 ``` js
 module.exports = {
@@ -35,43 +35,17 @@ module.exports = {
 };
 ```
 
-#### webpack 1
-
-``` js
-module.exports = {
-  module: {
-    loaders: [
-      {
-          test: /\.js$/,
-          loader: 'path-replace-loader',
-          exclude: /(node_modules)/,
-          query: {
-              path: 'ORIGINAL_PATH',
-              replacePath: 'REPLACE_PATH'
-          }
-      }
-    ]
-  }
-};
-```
-
 #### Example
 
 Loader tries to load from local directory if file exists app/<b>local</b>/modules/auth
 
 ``` js
-import authModule from 'app/core/modules/auth';
+const authModule = require('app/core/modules/auth');
 ```
 
-Or with webpack 1
+#### Babel + webpack
 
-``` js
-var authModule = require('app/core/modules/auth');
-```
-
-#### Babel + webpack 2
-
-Make sure to include this in your .babelrc, if you want to use Babel with webpack 2
+Make sure to include this in your .babelrc, if you want to use Babel with webpack
 ``` js
 {
     "presets": [
@@ -83,6 +57,7 @@ Make sure to include this in your .babelrc, if you want to use Babel with webpac
 
 ## Release History
 
+- 2.0.0 - Bump packages and add webpack 3 support
 - 1.0.0 - Add webpack 2 support
 - 0.2.2 - Improve example
 - 0.2.1 - Update README
