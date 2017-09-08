@@ -1,8 +1,8 @@
-var chalk = require('chalk');
-var fooModule = require('./core/foo');
+const chalk = require('chalk');
+const fooModule = require('./core/foo');
 
-var log = console.log;
-var newLine = '\r\n';
+const log = console.log;
+const newLine = '\r\n';
 
 // Force chalk to add styles
 chalk.enabled = true;
