@@ -1,6 +1,6 @@
 {
   "name": "path-replace-loader",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "description": "Path replace loader for webpack",
   "main": "index.js",
   "scripts": {
@@ -23,10 +23,10 @@
   },
   "homepage": "https://github.com/cvgellhorn/path-replace-loader#readme",
   "dependencies": {
-    "loader-utils": "^0.2.14"
+    "loader-utils": "^1.1.0"
   },
   "devDependencies": {
-    "chalk": "^1.1.3",
-    "webpack": "^2.2.1"
+    "chalk": "^2.1.0",
+    "webpack": "^3.5.6"
   }
 }
