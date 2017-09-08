@@ -1,17 +1,16 @@
-var fs = require('fs');
-var loaderUtils = require('loader-utils');
+const fs = require('fs');
+const loaderUtils = require('loader-utils');
 
 module.exports = function(source) {
     this.cacheable && this.cacheable();
 
-    var callback = this.async();
-    var query = loaderUtils.parseQuery(this.query);
+    const callback = this.async();
+    const options = loaderUtils.getOptions(this);
 
-    if (this.resourcePath.indexOf(query.path) > -1) {
-        var self = this;
-        var newPath = this.resourcePath.replace(query.path, query.replacePath);
+    if (this.resourcePath.indexOf(options.path) > -1) {
+        const newPath = this.resourcePath.replace(options.path, options.replacePath);
 
-        fs.readFile(newPath, function(err, data) {
+        fs.readFile(newPath, (err, data) => {
             if (err) {
                 // Return original source if file doesn't exist
                 if (err.code === 'ENOENT') return callback(null, source);
@@ -21,7 +20,7 @@ module.exports = function(source) {
             }
 
             // Introduce file to webpack in order to make them watchable
-            self.addDependency(newPath);
+            this.addDependency(newPath);
 
             callback(null, data);
         });
